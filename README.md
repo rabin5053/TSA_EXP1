@@ -15,7 +15,18 @@ To Develop a python program to Plot a time series data (population/ market price
 
 
 
-
+import pandas as pd
+import matplotlib.pyplot as plt
+data=pd.read_csv('tesla_2014_2023.csv')
+data.head()
+data["date"]=pd.to_datetime(data["date"])
+plt.plot(data['date'], data['close'], label='Time Series Data')
+plt.xlabel('Date')
+plt.ylabel('Price')
+plt.title('Time Series Plot')
+plt.legend()
+plt.show(block=False)
+plt.show()
 
 
 
@@ -23,6 +34,7 @@ To Develop a python program to Plot a time series data (population/ market price
 
 
 # OUTPUT:
+<img width="831" height="566" alt="image" src="https://github.com/user-attachments/assets/3e7bd959-0eb7-43d1-b36d-38e879687ac4" />
 
 
 
